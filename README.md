@@ -1,7 +1,6 @@
 # gpx2
 This repository contains the code for Generalized Partition Crossover 2 (GPX2). An example of how to recombine two random TSP solutions is presented in the main file.
 
-
 Description: This code is used to recombine, using GPX2, 2 solutions for the Traveling Salesman Problem. 
 
 Reference:  R. Tinos, D. Whitley, and G. Ochoa (2020). A new generalized partition crossover for the traveling salesman problem: tunneling between local optima. Evolutionary Computation, 28 (2): 255–288.		
@@ -22,9 +21,9 @@ Observation: 3 fusion steps are performed (see gpx.cpp). The number of fusion st
 
 Function gpx: recombine two solutions using GPX2
 	
-	- Call: fitness_offspring=gpx(parent1,parent2,offspring); 
+	- Call: gpx(parent1, parent2, &offspring1_weight, &offspring2_weight);
 	
-	// where parent1, parent 2, offspring are solution vectors (integer vectors) and fitness_offspring is the fitness of the offspring
+	// where parent1 and parent2 are solution vectors (integer vectors). After recombination they are replaced by the best and the worst offspring. The new weighs are stored in the variables offspring1_weight and offspring2_weight.
 		
 	- The different steps of gpx2 are commented in function gpx in gpx.cpp
 	
