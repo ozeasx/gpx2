@@ -26,7 +26,7 @@ Function gpx: recombine two solutions using GPX2
 	
 where parent1 and parent2 are solution vectors (integer vectors).
 After recombination they are replaced by the best and the worst offspring, respectively.
-The new weighs are stored in the variables offspring1_weight and offspring2_weight.
+The new weights are stored in the variables offspring1_weight and offspring2_weight.
 		
 The different steps of gpx2 are commented in function gpx in gpx.cpp.
 
