@@ -6,13 +6,14 @@ Description: This code is used to recombine, using GPX2, 2 solutions for the Tra
 Reference:  R. Tinos, D. Whitley, and G. Ochoa (2020). A new generalized partition crossover for the traveling salesman problem: tunneling between local optima. Evolutionary Computation, 28 (2): 255–288.		
 Contact: Renato Tinos <rtinos@ffclrp.usp.br>
 
-Running the code: ./gpx2 <name_of_instance.tsp>
+Running the code:
+	
+	./gpx2 <name_of_instance.tsp>
 
 Example for running the code with instance xqe3891: 
 
-				make
-				
-			     ./gpx2 xqe3891.tsp 
+	make			
+	./gpx2 xqe3891.tsp 
 			     
 Input: i) TSP instance (e.g., xqe3891.tsp); 
 
@@ -21,15 +22,21 @@ Observation: 3 fusion steps are performed (see gpx.cpp). The number of fusion st
 
 Function gpx: recombine two solutions using GPX2
 	
-	- Call: gpx(parent1, parent2, &offspring1_weight, &offspring2_weight);
+	- Call: gpx(&parent1, &parent2, &offspring1_weight, &offspring2_weight);
 	
-	// where parent1 and parent2 are solution vectors (integer vectors). After recombination they are replaced by the best and the worst offspring. The new weighs are stored in the variables offspring1_weight and offspring2_weight.
+where parent1 and parent2 are solution vectors (integer vectors).
+After recombination they are replaced by the best and the worst offspring, respectively.
+The new weighs are stored in the variables offspring1_weight and offspring2_weight.
 		
-	- The different steps of gpx2 are commented in function gpx in gpx.cpp
-	
-	- Class tour.h is used for the manipulation of the candidate recombining partitions in gpx
-	
-	- Function gpx uses two classes for the manipulation of graphs. Those classes were developed in other projects and are reused here. They contain general (and common) functions for the manipulation of graphs. They can be replaced by other classes (codes) for the manipulation of graphs. For each call in gpx.cpp for one of those functions, a comment was inserted.  
+The different steps of gpx2 are commented in function gpx in gpx.cpp.
+
+Class tour.h is used for the manipulation of the candidate recombining partitions in gpx.
+
+Function gpx uses two classes for the manipulation of graphs. Those classes were developed
+in other projects and are reused here. They contain general (and common) functions for
+the manipulation of graphs. They can be replaced by other classes (codes) for the manipulation of graphs.
+
+For each call in gpx.cpp for one of those functions, a comment was inserted.
 			
 
 
