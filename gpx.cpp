@@ -820,10 +820,7 @@ void gpx(int **solution_blue, int **solution_red, double *fitness_offspring_blue
 
 	#ifdef REPORT
 	candidate->report();
-	if (*fitness_offspring_blue < *fitness_offspring_red)
-		cout << *fitness_offspring_blue << ", " << *fitness_offspring_red << ", ";
-	else
-		cout << *fitness_offspring_red << ", " << *fitness_offspring_blue << ", ";
+	cout << *fitness_offspring_blue << ", " << *fitness_offspring_red << ", ";
 	#endif
 
 	// Generate the best offspring by selecting the shortest solution path in each component
