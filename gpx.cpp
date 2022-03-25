@@ -818,14 +818,22 @@ void gpx(int **solution_blue, int **solution_red, double *fitness_offspring_blue
 	candidate->fusionB(solution_blue_p2, solution_red_p2);            // if candidate i did not pass the test and has conditions, apply fusionB to find fusions of partitions in order to have partitions with 2 cutting points
 	// candidate->print();			// print the components
 
+	#ifdef REPORT
+	candidate->report();
+	if (*fitness_offspring_blue < *fitness_offspring_red)
+		cout << *fitness_offspring_blue << ", " << *fitness_offspring_red << ", ";
+	else
+		cout << *fitness_offspring_red << ", " << *fitness_offspring_blue << ", ";
+	#endif
+
 	// Generate the best offspring by selecting the shortest solution path in each component
 	*fitness_offspring_blue = candidate->off_gen(solution_blue_p2, solution_red_p2, *solution_blue, label_list, BEST);
 
-	// Generate the worst offspring by selecting the longest solution path in each component
+	// Generate the complementary offspring by selecting the longest solution path in each component
 	*fitness_offspring_red = candidate->off_gen(solution_blue_p2, solution_red_p2, *solution_red, label_list, WORST);
 
 	#ifdef REPORT
-	candidate->report();
+	cout << *fitness_offspring_blue << ", " << *fitness_offspring_red << ", ";
 	#endif
 
 	delete candidate;
