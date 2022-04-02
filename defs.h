@@ -2,6 +2,7 @@
 *								 Definitions							 *
 \******************************************************************************/
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 const int max_dm_size = 20000; // ~1.5G

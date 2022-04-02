@@ -820,7 +820,7 @@ void gpx(int **solution_blue, int **solution_red, double *fitness_offspring_blue
 
 	#ifdef REPORT
 	candidate->report();
-	cout << *fitness_offspring_blue << ", " << *fitness_offspring_red << ", ";
+	cout << fixed << setprecision(0) << *fitness_offspring_blue << "," << *fitness_offspring_red << ",";
 	#endif
 
 	// Generate the best offspring by selecting the shortest solution path in each component
@@ -830,7 +830,7 @@ void gpx(int **solution_blue, int **solution_red, double *fitness_offspring_blue
 	*fitness_offspring_red = candidate->off_gen(solution_blue_p2, solution_red_p2, *solution_red, label_list, WORST);
 
 	#ifdef REPORT
-	cout << *fitness_offspring_blue << ", " << *fitness_offspring_red << ", ";
+	cout << fixed << setprecision(0) << *fitness_offspring_blue << "," << *fitness_offspring_red << ",";
 	#endif
 
 	delete candidate;

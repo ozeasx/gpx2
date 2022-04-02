@@ -942,10 +942,10 @@ void candidates::report(void)
 	// 	cout << "test[" << i << "]: " << test[i] << endl;
 
 	cout << "GPX2: ";
-	cout << this->n_components << ", ("
-	     << this->n_infeasible << ", "
-		 << this->n_feasible << ", "
-		 << this->n_fusions << "), ";
+	cout << this->n_components << ","
+	     << this->n_infeasible << ","
+		 << this->n_feasible << ","
+		 << this->n_fusions << ",\t";
 }
 
 // return test of the candidate
